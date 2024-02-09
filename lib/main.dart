@@ -12,17 +12,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-          primaryColor: Colors.black,
-          backgroundColor: Colors.black,
-          scaffoldBackgroundColor: Colors.white),
-      home: const MyHomePage(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      home: const MyHomePage(title: 'Detail'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class MyHomePage extends StatelessWidget {
             Expanded(
                 child: Container(
                     child: Center(
-              child: Text('Default'),
+              child: Text(title),
             ))),
             Container(
               child:
@@ -49,8 +47,46 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(children: 
-        [CappucinoDisplay(), DescriptionPage(), PaymentPage()]),
+        child: Column(
+            children: [CappucinoDisplay(), DescriptionPage(), PaymentPage()]),
+      ),
+    );
+  }
+}
+
+class TitleSection extends StatelessWidget {
+  const TitleSection({super.key, required this.name, required this.location});
+  final String name;
+  final String location;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Row(
+        children: [
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text(
+                  name,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Text(
+                location,
+                style: TextStyle(
+                  color: Colors.grey[500],
+                ),
+              )
+            ],
+          )),
+          Icon(Icons.star, color: Colors.red),
+          Text('41')
+        ],
       ),
     );
   }
