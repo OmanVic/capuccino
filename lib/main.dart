@@ -49,10 +49,8 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(children: [
-          CappucinoDisplay(),
-           DescriptionPage()
-          ]),
+        child: Column(children: 
+        [CappucinoDisplay(), DescriptionPage(), PaymentPage()]),
       ),
     );
   }
@@ -90,16 +88,15 @@ class CappucinoDisplay extends StatelessWidget {
                 child: Text('4.8'),
               ),
               Container(
-                child:Text('(230)'),
+                child: Text('(230)'),
               ),
               Spacer(),
               Container(
-                child:Image.asset('assets/images/bean.jpg') ,
+                child: Image.asset('assets/images/bean.jpg'),
               ),
               Container(
-                child:Image.asset('assets/images/milk.jpg') ,
+                child: Image.asset('assets/images/milk.jpg'),
               )
-              
             ],
           ),
         )
@@ -144,8 +141,25 @@ class DescriptionPage extends StatelessWidget {
     return Container(
       width: 100,
       height: 100,
-      child: Text(
-        text),
+      child: Text(text),
+    );
+  }
+}
+
+class PaymentPage extends StatelessWidget {
+  const PaymentPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          children: [Text('Price'), Text('\$4.53')],
+        ),
+        Spacer(),
+        Text('Buy Now')
+      ],
     );
   }
 }
