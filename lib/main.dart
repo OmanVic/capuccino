@@ -75,20 +75,25 @@ class CappucinoDisplay extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
+          padding: const EdgeInsets.only(bottom: 10.0),
           child: CappucunoPicture,
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(
             ProductName,
-            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf'),
+            style: TextStyle(
+              fontFamily: 'Sora-ExtraBold.ttf',
+              fontSize: 27,
+              fontWeight: FontWeight.bold),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(ProductNameType,
-              style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
+              style: TextStyle(
+                fontFamily: 'Sora-Regular.ttf',
+                 color: Color.fromRGBO(155, 155, 155, 0.5))),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -101,12 +106,17 @@ class CappucinoDisplay extends StatelessWidget {
               Container(
                 child: Text(
                   ProductRating,
-                  style: TextStyle(fontFamily: 'Sora-Bold.ttf'),
+                  style: TextStyle(fontFamily: 'Sora-Bold.ttf',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
               ),
               Container(
                 child: Text(ProductSales,
-                    style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
+                    style: TextStyle(
+                      fontFamily: 'Sora-Regular.ttf',
+                      ),
+                      ),
               ),
               Spacer(),
               Container(
@@ -114,11 +124,7 @@ class CappucinoDisplay extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(155, 155, 155, 0.5),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.elliptical(20, 10),
-                      topRight: Radius.elliptical(20, 10),
-                      bottomRight: Radius.elliptical(10, 20),
-                      bottomLeft: Radius.elliptical(10, 20)),
+                  borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                     color: Color.fromRGBO(155, 155, 155, 0.5),
                     width: 3.0,
@@ -127,60 +133,12 @@ class CappucinoDisplay extends StatelessWidget {
                 child: ProductDescription1,
               ),
               SizedBox(width: 20),
-              // Stack(
-              //   children: [
-              //     // Child Container
-              //     Container(
-              //       decoration: BoxDecoration(
-              //         borderRadius: BorderRadius.circular(50.0)
-              //       ),
-              //       child: Container(
-
-              //         width: 50,
-              //         height: 50,
-              //         child: ProductDescription1,
-              //       ),
-              //     ),
-              //     // Overlay Container
-              //     Positioned.fill(
-              //       child: Container(
-              //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              //   Stack(
-              //   children: [
-              //     // Child Container
-              //     Container(
-              //       decoration: BoxDecoration(
-              //         borderRadius: BorderRadius.circular(50.0)
-              //       ),
-              //       child: Container(
-
-              //         width: 50,
-              //         height: 50,
-              //         child: ProductDescription2,
-              //       ),
-              //     ),
-              //     // Overlay Container
-              //     Positioned.fill(
-              //       child: Container(
-              //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
-              //       ),
-              //     ),
-              //   ],
-              // ),
               Container(
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(155, 155, 155, 0.5),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.elliptical(20, 10),
-                      topRight: Radius.elliptical(20, 10),
-                      bottomRight: Radius.elliptical(10, 20),
-                      bottomLeft: Radius.elliptical(10, 20)),
+                  borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                     color: Color.fromRGBO(155, 155, 155, 0.5),
                     width: 3.0,
@@ -230,7 +188,7 @@ class DescriptionPage extends StatelessWidget {
               TextSpan(
                   text: ProductDescription,
                   style: TextStyle(
-                      fontFamily: 'Sora-Thin.ttf',
+                      fontFamily: 'Sora-Regular.ttf',
                       color: Color.fromRGBO(155, 155, 155, 0.5),
                       fontSize: 16)),
               TextSpan(
