@@ -82,12 +82,13 @@ class CappucinoDisplay extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(
             ProductName,
-            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf'),),
+            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf'),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(ProductNameType,
-          style: TextStyle(fontFamily:'Sora-Thin.ttf' )),
+              style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -98,25 +99,26 @@ class CappucinoDisplay extends StatelessWidget {
                 child: Icon(Icons.star, color: Colors.yellow),
               ),
               Container(
-                child: Text(ProductRating,
-                style: TextStyle(fontFamily: 'Sora-Bold.ttf'),),
+                child: Text(
+                  ProductRating,
+                  style: TextStyle(fontFamily: 'Sora-Bold.ttf'),
+                ),
               ),
               Container(
                 child: Text(ProductSales,
-                style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
+                    style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
               ),
               Spacer(),
-               Container(
+              Container(
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(155, 155, 155, 0.5),
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.elliptical(20, 10),
-                    topRight: Radius.elliptical(20, 10),
-                    bottomRight: Radius.elliptical(10, 20),
-                    bottomLeft: Radius.elliptical(10, 20)
-                  ),
+                      topLeft: Radius.elliptical(20, 10),
+                      topRight: Radius.elliptical(20, 10),
+                      bottomRight: Radius.elliptical(10, 20),
+                      bottomLeft: Radius.elliptical(10, 20)),
                   border: Border.all(
                     color: Color.fromRGBO(155, 155, 155, 0.5),
                     width: 3.0,
@@ -125,63 +127,60 @@ class CappucinoDisplay extends StatelessWidget {
                 child: ProductDescription1,
               ),
               SizedBox(width: 20),
-                // Stack(
-                //   children: [
-                //     // Child Container
-                //     Container(
-                //       decoration: BoxDecoration(
-                //         borderRadius: BorderRadius.circular(50.0)
-                //       ),
-                //       child: Container(
+              // Stack(
+              //   children: [
+              //     // Child Container
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(50.0)
+              //       ),
+              //       child: Container(
 
-                        
-                //         width: 50,
-                //         height: 50,
-                //         child: ProductDescription1,
-                //       ),
-                //     ),
-                //     // Overlay Container
-                //     Positioned.fill(
-                //       child: Container(
-                //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                //   Stack(
-                //   children: [
-                //     // Child Container
-                //     Container(
-                //       decoration: BoxDecoration(
-                //         borderRadius: BorderRadius.circular(50.0)
-                //       ),
-                //       child: Container(
+              //         width: 50,
+              //         height: 50,
+              //         child: ProductDescription1,
+              //       ),
+              //     ),
+              //     // Overlay Container
+              //     Positioned.fill(
+              //       child: Container(
+              //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              //   Stack(
+              //   children: [
+              //     // Child Container
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(50.0)
+              //       ),
+              //       child: Container(
 
-                        
-                //         width: 50,
-                //         height: 50,
-                //         child: ProductDescription2,
-                //       ),
-                //     ),
-                //     // Overlay Container
-                //     Positioned.fill(
-                //       child: Container(
-                //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
-                //       ),
-                //     ),
-                //   ],
-                // ),
+              //         width: 50,
+              //         height: 50,
+              //         child: ProductDescription2,
+              //       ),
+              //     ),
+              //     // Overlay Container
+              //     Positioned.fill(
+              //       child: Container(
+              //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Container(
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(155, 155, 155, 0.5),
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.elliptical(20, 10),
-                    topRight: Radius.elliptical(20, 10),
-                    bottomRight: Radius.elliptical(10, 20),
-                    bottomLeft: Radius.elliptical(10, 20)
-                  ),
+                      topLeft: Radius.elliptical(20, 10),
+                      topRight: Radius.elliptical(20, 10),
+                      bottomRight: Radius.elliptical(10, 20),
+                      bottomLeft: Radius.elliptical(10, 20)),
                   border: Border.all(
                     color: Color.fromRGBO(155, 155, 155, 0.5),
                     width: 3.0,
@@ -200,6 +199,14 @@ class CappucinoDisplay extends StatelessWidget {
 class DescriptionPage extends StatelessWidget {
   const DescriptionPage({super.key});
 
+  final String ProductDescription =
+      'A cappacino is an approximately 150ml (5 oz) breverage, with 25 ml of espresso coffee and 85ml of fresh milk for..';
+
+  final String ProductDescriptionLink = 'Read More';
+  final Color blackcolor = const Color(0xFF2F2D2C);
+  final Color BrownColor = const Color(0xFFC67C4E);
+  final Color GreyColor = const Color(0xff9B9B9B);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -207,33 +214,77 @@ class DescriptionPage extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text('Description'),
+          child: Text(
+            'Description',
+            style: TextStyle(
+              fontFamily: 'Sora-ExtraBold.ttf',
+              fontSize: 25,
+              fontWeight: FontWeight.bold
+            ),
+          ),
         ),
+        Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: RichText(
+                text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ProductDescription,
+                  style: TextStyle(
+                      fontFamily: 'Sora-Thin.ttf',
+                      color: Color.fromRGBO(155, 155, 155, 0.5),
+                      fontSize: 16)),
+              TextSpan(
+                  text: ProductDescriptionLink,
+                  style: TextStyle(
+                      fontFamily: 'Sora-Medium.ttf',
+                      color: Color(0xFFC67C4E),
+                      fontSize: 18))
+            ]))),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(
-              'A cappacino is an approximately 150ml (5 oz) breverage, with 25 ml of espresso coffee and 85ml of fresh milk for..'),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text('Size'),
+            'Size',
+            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf', 
+            fontSize: 25,
+            fontWeight: FontWeight.bold),
+          ),
         ),
         Row(
           children: [
-            _CappacinoSize('S'),
-            _CappacinoSize('M'),
-            _CappacinoSize('L')
+            _CappacinoSize('S', blackcolor, Colors.white, GreyColor),
+            SizedBox(width: 15),
+            _CappacinoSize('M', BrownColor, BrownColor.withOpacity(0.2), BrownColor),
+            SizedBox(width: 15),
+            _CappacinoSize('L', blackcolor, Colors.white, GreyColor)
           ],
         )
       ],
     );
   }
 
-  Widget _CappacinoSize(String text) {
+  Widget _CappacinoSize(
+      String text, Color color, Color background, Color border) {
     return Container(
-      width: 100,
-      height: 100,
-      child: Text(text),
+      width: 90,
+      height: 50,
+      decoration: BoxDecoration(
+        color: background,
+        border: Border.all(
+          color: border,
+          width: 2,
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+    
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 22,
+            color: color,
+          ),
+        ),
+      ),
     );
   }
 }
