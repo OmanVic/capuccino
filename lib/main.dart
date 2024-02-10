@@ -36,7 +36,10 @@ class MyHomePage extends StatelessWidget {
             Expanded(
                 child: Container(
                     child: Center(
-              child: Text(title),
+              child: Text(
+                title,
+                style: TextStyle(fontFamily: 'Sora-Bold.ttf'),
+              ),
             ))),
             Container(
               child:
@@ -54,46 +57,17 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class TitleSection extends StatelessWidget {
-  const TitleSection({super.key, required this.name, required this.location});
-  final String name;
-  final String location;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(32.0),
-      child: Row(
-        children: [
-          Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Text(
-                  name,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Text(
-                location,
-                style: TextStyle(
-                  color: Colors.grey[500],
-                ),
-              )
-            ],
-          )),
-          Icon(Icons.star, color: Colors.red),
-          Text('41')
-        ],
-      ),
-    );
-  }
-}
-
 class CappucinoDisplay extends StatelessWidget {
-  const CappucinoDisplay({super.key});
+  CappucinoDisplay({super.key});
+
+  final Image CappucunoPicture =
+      Image.asset('assets/images/Rectangle 1706.jpg');
+  final String ProductName = 'Cappucino';
+  final String ProductNameType = 'with Chocolate';
+  final String ProductRating = '4.8';
+  final String ProductSales = '(230)';
+  final Image ProductDescription1 = Image.asset('assets/images/bean.jpg');
+  final Image ProductDescription2 = Image.asset('assets/images/milk.jpg');
 
   @override
   Widget build(BuildContext context) {
@@ -102,15 +76,18 @@ class CappucinoDisplay extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
-          child: Image.asset('assets/images/Rectangle 1706.jpg'),
+          child: CappucunoPicture,
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text('Cappucino'),
+          child: Text(
+            ProductName,
+            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf'),),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text('with Chocolate'),
+          child: Text(ProductNameType,
+          style: TextStyle(fontFamily:'Sora-Thin.ttf' )),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -121,17 +98,39 @@ class CappucinoDisplay extends StatelessWidget {
                 child: Icon(Icons.star, color: Colors.yellow),
               ),
               Container(
-                child: Text('4.8'),
+                child: Text(ProductRating,
+                style: TextStyle(fontFamily: 'Sora-Bold.ttf'),),
               ),
               Container(
-                child: Text('(230)'),
+                child: Text(ProductSales,
+                style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
               ),
               Spacer(),
+                Stack(
+                  children: [
+                    // Child Container
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0)
+                      ),
+                      child: Container(
+
+                        
+                        width: 50,
+                        height: 50,
+                        child: ProductDescription2,
+                      ),
+                    ),
+                    // Overlay Container
+                    Positioned.fill(
+                      child: Container(
+                        color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
+                      ),
+                    ),
+                  ],
+                ),
               Container(
-                child: Image.asset('assets/images/bean.jpg'),
-              ),
-              Container(
-                child: Image.asset('assets/images/milk.jpg'),
+                child: ProductDescription2,
               )
             ],
           ),

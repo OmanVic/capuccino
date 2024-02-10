@@ -85,14 +85,28 @@ flutter:
     - family: Sora
       fonts:
         - asset: assets/images/fonts/Sora-Bold.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-ExtraBold.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-ExtraLight.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-Light.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-Medium.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-Regular.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-SemiBold.ttf
+    - family: Sora
+      fonts:
         - asset: assets/images/fonts/Sora-Thin.ttf
-          style: italic
+       
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
