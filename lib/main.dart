@@ -106,32 +106,89 @@ class CappucinoDisplay extends StatelessWidget {
                 style: TextStyle(fontFamily: 'Sora-Thin.ttf')),
               ),
               Spacer(),
-                Stack(
-                  children: [
-                    // Child Container
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0)
-                      ),
-                      child: Container(
+               Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(155, 155, 155, 0.5),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.elliptical(20, 10),
+                    topRight: Radius.elliptical(20, 10),
+                    bottomRight: Radius.elliptical(10, 20),
+                    bottomLeft: Radius.elliptical(10, 20)
+                  ),
+                  border: Border.all(
+                    color: Color.fromRGBO(155, 155, 155, 0.5),
+                    width: 3.0,
+                  ),
+                ),
+                child: ProductDescription1,
+              ),
+              SizedBox(width: 20),
+                // Stack(
+                //   children: [
+                //     // Child Container
+                //     Container(
+                //       decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(50.0)
+                //       ),
+                //       child: Container(
 
                         
-                        width: 50,
-                        height: 50,
-                        child: ProductDescription2,
-                      ),
-                    ),
-                    // Overlay Container
-                    Positioned.fill(
-                      child: Container(
-                        color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
-                      ),
-                    ),
-                  ],
-                ),
+                //         width: 50,
+                //         height: 50,
+                //         child: ProductDescription1,
+                //       ),
+                //     ),
+                //     // Overlay Container
+                //     Positioned.fill(
+                //       child: Container(
+                //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                //   Stack(
+                //   children: [
+                //     // Child Container
+                //     Container(
+                //       decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(50.0)
+                //       ),
+                //       child: Container(
+
+                        
+                //         width: 50,
+                //         height: 50,
+                //         child: ProductDescription2,
+                //       ),
+                //     ),
+                //     // Overlay Container
+                //     Positioned.fill(
+                //       child: Container(
+                //         color: Color.fromRGBO(155, 155, 155, 0.5), // 9B9B9B with 50% opacity
+                //       ),
+                //     ),
+                //   ],
+                // ),
               Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(155, 155, 155, 0.5),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.elliptical(20, 10),
+                    topRight: Radius.elliptical(20, 10),
+                    bottomRight: Radius.elliptical(10, 20),
+                    bottomLeft: Radius.elliptical(10, 20)
+                  ),
+                  border: Border.all(
+                    color: Color.fromRGBO(155, 155, 155, 0.5),
+                    width: 3.0,
+                  ),
+                ),
                 child: ProductDescription2,
-              )
+              ),
             ],
           ),
         )
