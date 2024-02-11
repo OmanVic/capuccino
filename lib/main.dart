@@ -50,8 +50,24 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-            children: [CappucinoDisplay(), DescriptionPage(), PaymentPage()]),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: CappucinoDisplay(),
+              ),
+             Padding(
+               padding: const EdgeInsets.symmetric(vertical: 10.0),
+               child: DescriptionPage(),
+             ), 
+             Padding(
+               padding: const EdgeInsets.symmetric(vertical: 10.0),
+               child: PaymentPage(),
+             )
+             ]
+             ),)
+        
       ),
     );
   }
@@ -83,17 +99,17 @@ class CappucinoDisplay extends StatelessWidget {
           child: Text(
             ProductName,
             style: TextStyle(
-              fontFamily: 'Sora-ExtraBold.ttf',
-              fontSize: 27,
-              fontWeight: FontWeight.bold),
+                fontFamily: 'Sora-ExtraBold.ttf',
+                fontSize: 27,
+                fontWeight: FontWeight.bold),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(ProductNameType,
               style: TextStyle(
-                fontFamily: 'Sora-Regular.ttf',
-                 color: Color.fromRGBO(155, 155, 155, 0.5))),
+                  fontFamily: 'Sora-Regular.ttf',
+                  color: Color.fromRGBO(155, 155, 155, 0.5))),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -106,17 +122,19 @@ class CappucinoDisplay extends StatelessWidget {
               Container(
                 child: Text(
                   ProductRating,
-                  style: TextStyle(fontFamily: 'Sora-Bold.ttf',
+                  style: TextStyle(
+                      fontFamily: 'Sora-Bold.ttf',
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
               ),
               Container(
-                child: Text(ProductSales,
-                    style: TextStyle(
-                      fontFamily: 'Sora-Regular.ttf',
-                      ),
-                      ),
+                child: Text(
+                  ProductSales,
+                  style: TextStyle(
+                    fontFamily: 'Sora-Regular.ttf',
+                  ),
+                ),
               ),
               Spacer(),
               Container(
@@ -175,10 +193,9 @@ class DescriptionPage extends StatelessWidget {
           child: Text(
             'Description',
             style: TextStyle(
-              fontFamily: 'Sora-ExtraBold.ttf',
-              fontSize: 25,
-              fontWeight: FontWeight.bold
-            ),
+                fontFamily: 'Sora-ExtraBold.ttf',
+                fontSize: 25,
+                fontWeight: FontWeight.bold),
           ),
         ),
         Padding(
@@ -202,16 +219,18 @@ class DescriptionPage extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(
             'Size',
-            style: TextStyle(fontFamily: 'Sora-ExtraBold.ttf', 
-            fontSize: 25,
-            fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontFamily: 'Sora-ExtraBold.ttf',
+                fontSize: 25,
+                fontWeight: FontWeight.bold),
           ),
         ),
         Row(
           children: [
             _CappacinoSize('S', blackcolor, Colors.white, GreyColor),
             SizedBox(width: 15),
-            _CappacinoSize('M', BrownColor, BrownColor.withOpacity(0.2), BrownColor),
+            _CappacinoSize(
+                'M', BrownColor, BrownColor.withOpacity(0.2), BrownColor),
             SizedBox(width: 15),
             _CappacinoSize('L', blackcolor, Colors.white, GreyColor)
           ],
@@ -233,7 +252,6 @@ class DescriptionPage extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(15),
       ),
-    
       child: Center(
         child: Text(
           text,
@@ -249,6 +267,7 @@ class DescriptionPage extends StatelessWidget {
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
+  final String PriceAmount = '\$4.53';
 
   @override
   Widget build(BuildContext context) {
@@ -256,10 +275,45 @@ class PaymentPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Column(
-          children: [Text('Price'), Text('\$4.53')],
+          children: [
+            Text(
+              'Price',
+              style: TextStyle(
+                fontFamily: 'Sora-Regular.ttf',
+                color: Color.fromRGBO(155, 155, 155, 0.5),
+                fontSize: 16
+              ),
+              ), 
+          Text(
+            PriceAmount,
+            style: TextStyle(
+              fontFamily: 'Sora-ExtraBold.ttf',
+              color:  Color(0xFFC67C4E),
+              fontSize: 25
+            ),
+            )
+            ],
         ),
         Spacer(),
-        Text('Buy Now')
+        Container(
+          width: 200,
+          height: 50,
+          decoration: BoxDecoration(
+            color: Color(0xFFC67C4E),
+            borderRadius: BorderRadius.circular(15)
+          ),
+          child:Center(
+            child: Text(
+            'Buy Now',
+            style: TextStyle(
+              fontFamily: 'Sora-ExtraBold.ttf',
+              fontSize: 25,
+              color: Colors.white
+            ),
+          ) ,
+          ),
+        )
+        
       ],
     );
   }
