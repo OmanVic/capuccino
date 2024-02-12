@@ -38,7 +38,9 @@ class MyHomePage extends StatelessWidget {
                     child: Center(
               child: Text(
                 title,
-                style: TextStyle(fontFamily: 'Sora-Bold.ttf'),
+                style: TextStyle(
+                  fontFamily: 'Sora-Bold.ttf',
+                  fontWeight:FontWeight.bold ),
               ),
             ))),
             Container(
@@ -47,28 +49,26 @@ class MyHomePage extends StatelessWidget {
             )
           ],
         ),
+        backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: CappucinoDisplay(),
               ),
-             Padding(
-               padding: const EdgeInsets.symmetric(vertical: 10.0),
-               child: DescriptionPage(),
-             ), 
-             Padding(
-               padding: const EdgeInsets.symmetric(vertical: 10.0),
-               child: PaymentPage(),
-             )
-             ]
-             ),)
-        
-      ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: DescriptionPage(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: PaymentPage(),
+              )
+            ]),
+          )),
     );
   }
 }
@@ -87,87 +87,93 @@ class CappucinoDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: CappucunoPicture,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text(
-            ProductName,
-            style: TextStyle(
-                fontFamily: 'Sora-ExtraBold.ttf',
-                fontSize: 27,
-                fontWeight: FontWeight.bold),
+    return Container(
+      decoration: BoxDecoration(
+          border: Border(
+              bottom: BorderSide(
+                  color: Color.fromRGBO(155, 155, 155, 0.5), width: 1.0))),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10.0),
+            child: CappucunoPicture,
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text(ProductNameType,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Text(
+              ProductName,
               style: TextStyle(
-                  fontFamily: 'Sora-Regular.ttf',
-                  color: Color.fromRGBO(155, 155, 155, 0.5))),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                child: Icon(Icons.star, color: Colors.yellow),
-              ),
-              Container(
-                child: Text(
-                  ProductRating,
-                  style: TextStyle(
-                      fontFamily: 'Sora-Bold.ttf',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ),
-              Container(
-                child: Text(
-                  ProductSales,
-                  style: TextStyle(
-                    fontFamily: 'Sora-Regular.ttf',
-                  ),
-                ),
-              ),
-              Spacer(),
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(155, 155, 155, 0.5),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Color.fromRGBO(155, 155, 155, 0.5),
-                    width: 3.0,
-                  ),
-                ),
-                child: ProductDescription1,
-              ),
-              SizedBox(width: 20),
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(155, 155, 155, 0.5),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Color.fromRGBO(155, 155, 155, 0.5),
-                    width: 3.0,
-                  ),
-                ),
-                child: ProductDescription2,
-              ),
-            ],
+                  fontFamily: 'Sora-ExtraBold.ttf',
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Text(ProductNameType,
+                style: TextStyle(
+                    fontFamily: 'Sora-Regular.ttf',
+                    color: Color.fromRGBO(155, 155, 155, 0.5))),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  child: Icon(Icons.star, color: Colors.yellow),
+                ),
+                Container(
+                  child: Text(
+                    ProductRating,
+                    style: TextStyle(
+                        fontFamily: 'Sora-Bold.ttf',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                ),
+                Container(
+                  child: Text(
+                    ProductSales,
+                    style: TextStyle(
+                      fontFamily: 'Sora-Regular.ttf',
+                    ),
+                  ),
+                ),
+                Spacer(),
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(155, 155, 155, 0.5),
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Color.fromRGBO(155, 155, 155, 0.5),
+                      width: 3.0,
+                    ),
+                  ),
+                  child: ProductDescription1,
+                ),
+                SizedBox(width: 20),
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(155, 155, 155, 0.5),
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Color.fromRGBO(155, 155, 155, 0.5),
+                      width: 3.0,
+                    ),
+                  ),
+                  child: ProductDescription2,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -207,13 +213,13 @@ class DescriptionPage extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Sora-Regular.ttf',
                       color: Color.fromRGBO(155, 155, 155, 0.5),
-                      fontSize: 16)),
+                      fontSize: 14)),
               TextSpan(
                   text: ProductDescriptionLink,
                   style: TextStyle(
                       fontFamily: 'Sora-Medium.ttf',
                       color: Color(0xFFC67C4E),
-                      fontSize: 18))
+                      fontSize: 16))
             ]))),
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -271,49 +277,59 @@ class PaymentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+    return Column(
       children: [
-        Column(
-          children: [
-            Text(
-              'Price',
-              style: TextStyle(
-                fontFamily: 'Sora-Regular.ttf',
-                color: Color.fromRGBO(155, 155, 155, 0.5),
-                fontSize: 16
-              ),
-              ), 
-          Text(
-            PriceAmount,
-            style: TextStyle(
-              fontFamily: 'Sora-ExtraBold.ttf',
-              color:  Color(0xFFC67C4E),
-              fontSize: 25
-            ),
-            )
-            ],
-        ),
-        Spacer(),
         Container(
-          width: 200,
-          height: 50,
+          padding: EdgeInsets.only(bottom: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  Text(
+                    'Price',
+                    style: TextStyle(
+                        fontFamily: 'Sora-Regular.ttf',
+                        color: Color.fromRGBO(155, 155, 155, 0.5),
+                        fontSize: 16),
+                  ),
+                  Text(
+                    PriceAmount,
+                    style: TextStyle(
+                        fontFamily: 'Sora-ExtraBold.ttf',
+                        color: Color(0xFFC67C4E),
+                        fontSize: 25),
+                  )
+                ],
+              ),
+              Spacer(),
+              Container(
+                width: 150,
+                height: 40,
+                decoration: BoxDecoration(
+                    color: Color(0xFFC67C4E),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Center(
+                  child: Text(
+                    'Buy Now',
+                    style: TextStyle(
+                        fontFamily: 'Sora-ExtraBold.ttf',
+                        fontSize: 25,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        Container(
+          height: 5,
+          width: MediaQuery.of(context).size.width * 0.5, 
           decoration: BoxDecoration(
-            color: Color(0xFFC67C4E),
-            borderRadius: BorderRadius.circular(15)
-          ),
-          child:Center(
-            child: Text(
-            'Buy Now',
-            style: TextStyle(
-              fontFamily: 'Sora-ExtraBold.ttf',
-              fontSize: 25,
-              color: Colors.white
-            ),
-          ) ,
-          ),
+
+            color: Colors.grey
+          )
         )
-        
       ],
     );
   }
