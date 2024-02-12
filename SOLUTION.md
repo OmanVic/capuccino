@@ -1,3 +1,3 @@
 
 
-<img src="cappacino.png" alt="Example Image" width="400" height="800">
+<img src="cappacino.png" alt="Example Image" width="360" height="740">
