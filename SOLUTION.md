@@ -1,3 +1,3 @@
 ![Example Image](cappacino.png)
 
-<img src="cappacino.png" alt="Example Image" width="560" height="940">
+<img src="cappacino.png" alt="Example Image" width="400" height="800">
